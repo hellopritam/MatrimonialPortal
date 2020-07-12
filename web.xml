@@ -1,0 +1,10 @@
+<web-app>
+	<servlet>
+		<servlet-name>upload1</servlet-name>
+		<servlet-class>upload1</servlet-class>
+	</servlet>
+<servlet-mapping>
+	<servlet-name>upload1</servlet-name>
+	<url-pattern>/u</url-pattern>
+</servlet-mapping>
+</web-app>

@@ -1,0 +1,23 @@
+<%@include file="connect.jsp" %>
+<%@ page import="java.io.*"%>
+<%@ page import="javax.servlet.*"%>
+<%@ page import="javax.servlet.http.*"%>
+<%
+try{
+	int id=0;
+	int uid=0;
+	id=Integer.parseint(request.getParameter("id"));
+	 uid=(Integer)session.getAttribute("usrid");
+
+	PreparedStatement pst=con.prepareStatement("insert into pritam.friends values(?,?,?)");
+	pst.setInt(1,uid);
+	pst.setInt(2,id);
+	pst.setInt(3,1);
+	pst.setString(3,0)
+	int t=pst.executeUpdate();
+	if(t>0)
+	{
+		session.setAttribute("msg",1);
+		response.sendRedirect("search1.jsp");
+
+	}
